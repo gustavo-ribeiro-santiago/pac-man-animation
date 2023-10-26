@@ -54,7 +54,7 @@ function update() {
 function checkCollisions(item) {
   // detect collision with all walls and make pacman bounce
   if (
-    item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
+    item.position.x + item.velocity.x + item.newimg.width >= document.querySelector("body").clientWidth ||
     item.position.x + item.velocity.x < 0
   )
   {
@@ -62,7 +62,7 @@ function checkCollisions(item) {
     item.newimg.style.transform = "rotate(" + Math.atan(item.velocity.y / item.velocity.x)* (180 / Math.PI) + "deg)";
   }
   if (
-    item.position.y + item.velocity.y + item.newimg.height > window.innerHeight ||
+    item.position.y + item.velocity.y + item.newimg.height >= document.querySelector("body").clientHeight ||
     item.position.y + item.velocity.y < 0
   ) 
   {
