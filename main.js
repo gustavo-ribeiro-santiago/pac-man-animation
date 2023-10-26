@@ -1,9 +1,7 @@
-var pos = 0;
 const pacArray = [
   ['PacMan1.png', 'PacMan2.png'],
   ['PacMan3.png', 'PacMan4.png']
 ];
-var direction = 0;
 const pacMen = []; // This array holds all the pacmen
 
 function setToRandom(scale) {
@@ -12,6 +10,7 @@ function setToRandom(scale) {
     y: Math.random() * scale
   }
 }
+
 // Factory to make a PacMan at a random position with random velocity
 function makePac() {
   // returns an object with random values scaled, e.g. {x: 33, y: 21}
@@ -23,7 +22,7 @@ function makePac() {
   newimg.style.position = 'absolute';
   newimg.src = 'PacMan1.png';
   newimg.width = 100;
-  // set position and direction
+  // set position and direction of image
   newimg.style.left = position.x;
   newimg.style.top = position.y;
   newimg.style.transform = "rotate(" + Math.atan(velocity.y / velocity.x)* (180 / Math.PI) + "deg)"
