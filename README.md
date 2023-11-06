@@ -17,6 +17,7 @@ Access web page [here](gustavo-ribeiro-santiago.github.io/pac-man-animation) or 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
+
 Gustavo Ribeiro Santiago
 
 Email: gustavorsa@poli.ufrj.br
