@@ -16,8 +16,8 @@ function makePac() {
   // returns an object with random values scaled, e.g. {x: 33, y: 21}
   let velocity = setToRandom(20);
   let position = setToRandom(200);
-  // Add image to div id = game
-  let game = document.getElementById('game');
+  // Add image to div id = arena
+  let arena = document.getElementById('arena');
   let newimg = document.createElement('img');
   newimg.style.position = 'absolute';
   newimg.src = 'images/PacMan1.png';
@@ -26,7 +26,7 @@ function makePac() {
   newimg.style.left = position.x;
   newimg.style.top = position.y;
   newimg.style.transform = "rotate(" + Math.atan(velocity.y / velocity.x)* (180 / Math.PI) + "deg)"
-  game.appendChild(newimg);
+  arena.appendChild(newimg);
   // return details in an object
   return {
     position,
@@ -53,8 +53,10 @@ function update() {
 
 function checkCollisions(item) {
   // detect collision with all walls and make pacman bounce
+  arenaHeight = document.getElementById("arena").getBoundingClientRect().height;
+  arenaWidth = document.getElementById("arena").getBoundingClientRect().width;
   if (
-    item.position.x + item.velocity.x + item.newimg.width >= document.querySelector("body").clientWidth ||
+    item.position.x + item.velocity.x + item.newimg.width >= arenaWidth ||
     item.position.x + item.velocity.x < 0
   )
   {
@@ -62,7 +64,7 @@ function checkCollisions(item) {
     item.newimg.style.transform = "rotate(" + Math.atan(item.velocity.y / item.velocity.x)* (180 / Math.PI) + "deg)";
   }
   if (
-    item.position.y + item.velocity.y + item.newimg.height >= document.querySelector("body").clientHeight ||
+    item.position.y + item.velocity.y + item.newimg.height >= arenaHeight ||
     item.position.y + item.velocity.y < 0
   ) 
   {

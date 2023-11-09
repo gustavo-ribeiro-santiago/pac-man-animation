@@ -1,9 +1,14 @@
 <html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
 <script src="pacmen.js"> </script>
 <body>
-    <div id='game'>
-        <button onclick='makeOne()' width='200' height='30'>Add PacMan</button>
-        <button onclick='update()' width='200' height='30'>Start Game</button>
-    </div>
+  <div id='game' class="m-4 mt-5">
+      <button onclick='makeOne()' class="btn btn-primary btn-lg mx-2">Add PacMan</button>
+      <button onclick='update()' class="btn btn-primary btn-lg sm:btn-dark">Start Game</button>
+      <div id="arena" class="border border-dark w-75 h-75 mt-5 position-absolute top-50 start-50 translate-middle"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
